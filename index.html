@@ -2,145 +2,170 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Karla Saely & Hamilton Arien 💗</title>
+<title>Para Ti 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background: black;
-        color: #fff;
-        overflow-x: hidden;
-        text-align: center;
+body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(to bottom,#0f0c29,#302b63,#24243e);
+    font-family:'Playfair Display', serif;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* Título principal */
+.mensaje{
+    margin-top:100px;
+    font-size:65px;
+    font-family:'Great Vibes', cursive;
+    text-shadow:0 0 25px rgba(255,182,193,0.9);
+    opacity:0;
+    animation: aparecer 3s forwards;
+}
+
+/* Texto romántico */
+.subtexto{
+    margin-top:40px;
+    font-size:22px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.9;
+    opacity:0;
+    animation: aparecer 4s forwards;
+}
+
+@keyframes aparecer{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Ramo */
+.ramo{
+    margin-top:60px;
+}
+
+.ramo img{
+    width:300px;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+/* Galería */
+.galeria{
+    margin-top:70px;
+}
+
+.galeria img{
+    width:230px;
+    margin:15px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(255,255,255,0.3);
+    transition: transform 0.3s;
+}
+
+.galeria img:hover{
+    transform:scale(1.05);
+}
+
+/* Firma */
+.firma{
+    margin-top:70px;
+    font-size:30px;
+    font-family:'Great Vibes', cursive;
+    opacity:0.9;
+}
+
+/* Pétalos */
+.petalo{
+    position:fixed;
+    top:-10px;
+    font-size:22px;
+    animation: caer linear infinite;
+}
+
+@keyframes caer{
+    to{
+        transform:translateY(100vh);
     }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-        position: relative;
-    }
-
-    h1, p {
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-    }
-
-    h1 { animation-delay: 0.5s; }
-    p { animation-delay: 1.5s; }
-
-    @keyframes fadeIn {
-        to { opacity: 1; }
-    }
-
-    .photos {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin: 20px 0;
-    }
-
-    .photos img {
-        border-radius: 15px;
-        width: 200px;
-        height: auto;
-        box-shadow: 0 0 20px rgba(255,255,255,0.2);
-        transition: transform 0.5s;
-    }
-
-    .photos img:hover { transform: scale(1.05); }
-
-    /* Ramo en espacio vacío */
-    #ramo {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, 30%) scale(0.5);
-        width: 300px;
-        opacity: 0;
-        transition: all 2s ease;
-        z-index: 2;
-    }
-
-    /* Pétalos cayendo */
-    .petal {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: pink;
-        border-radius: 50%;
-        animation: fall linear infinite;
-        opacity: 0.8;
-    }
-
-    @keyframes fall {
-        0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-        10% { opacity: 1; }
-        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-    }
-
-    footer {
-        margin-top: 60px;
-        font-size: 16px;
-        opacity: 0.8;
-    }
-
+}
 </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Karla Saely 💗</h1>
-    <p>16 meses contigo y aún siento que el destino fue demasiado generoso conmigo.  
-    Llegaste para quedarte y enseñarme que el amor verdadero no se promete… se demuestra.</p>
+<audio id="musica" src="musica.mp3" loop></audio>
 
-    <div class="photos">
-        <img src="imagen1.jpg" alt="Foto 1">
-        <img src="imagen2.jpg" alt="Foto 2">
-        <img src="imagen3.jpg" alt="Foto 3">
-    </div>
-
-    <!-- Ramo -->
-    <img id="ramo" src="ramo.png" alt="Ramo de flores">
-
-    <p>¿Seguimos escribiendo nuestra historia?</p>
-    <input type="text" id="respuesta" placeholder="Sí">
-    <button id="responder">Responder</button>
-
-    <footer>Karla Saely & Hamilton Arien ∞</footer>
+<div class="mensaje">
+    Para Ti 💗
 </div>
 
-<!-- Música automática usando tu MP3 -->
-<audio id="musica" src="musica.mp3" autoplay loop></audio>
+<div class="subtexto">
+    No sé exactamente en qué momento te convertiste  
+    en la parte más bonita de mis días…
+
+    Pero desde que llegaste, todo tiene más sentido,  
+    más luz y más esperanza.
+
+    Contigo aprendí que el amor no es solo una palabra,  
+    es una sensación que abraza el alma.
+
+    Eres mi pensamiento favorito al despertar,  
+    mi calma cuando todo es caos,  
+    mi sonrisa inesperada en medio del día.
+
+    Si alguna vez dudas de lo que significas para mí,  
+    recuerda esto:
+
+    Te elegiría siempre.  
+    En cada historia.  
+    En cada vida.  
+    En cada universo.
+</div>
+
+<div class="ramo">
+    <img src="ramo.png" alt="Ramo">
+</div>
+
+<div class="galeria">
+    <img src="imagen1.jpg">
+    <img src="imagen2.jpg">
+    <img src="imagen3.jpg">
+</div>
+
+<div class="firma">
+    Con amor, Hamilton
+</div>
 
 <script>
-    // Animación ramo y pétalos
-    window.onload = function() {
-        const ramo = document.getElementById('ramo');
-        setTimeout(() => {
-            ramo.style.opacity = 1;
-            ramo.style.transform = "translate(-50%, 0) scale(1)";
-        }, 2000);
+document.addEventListener("click", function() {
+    const audio = document.getElementById("musica");
+    audio.play();
+}, { once: true });
 
-        // Crear pétalos
-        for(let i=0; i<30; i++){
-            let petal = document.createElement('div');
-            petal.classList.add('petal');
-            petal.style.left = Math.random()*100 + 'vw';
-            petal.style.animationDuration = 5 + Math.random()*5 + 's';
-            petal.style.animationDelay = Math.random()*5 + 's';
-            document.body.appendChild(petal);
-        }
-    };
+function crearPetalo(){
+    const petalo = document.createElement("div");
+    petalo.classList.add("petalo");
+    petalo.innerHTML = "🌸";
+    petalo.style.left = Math.random() * window.innerWidth + "px";
+    petalo.style.animationDuration = (6 + Math.random() * 6) + "s";
+    document.body.appendChild(petalo);
 
-    // Respuesta interactiva
-    document.getElementById('responder').onclick = function() {
-        const resp = document.getElementById('respuesta').value;
-        if(resp.toLowerCase() === 'sí' || resp.toLowerCase() === 'si') {
-            alert("Entonces caminemos juntos todo lo que la vida nos permita... 💗");
-        } else {
-            alert("No importa, cada día es una nueva oportunidad de amor 💗");
-        }
-    }
+    setTimeout(()=>{
+        petalo.remove();
+    },10000);
+}
+
+setInterval(crearPetalo,600);
 </script>
 
 </body>
