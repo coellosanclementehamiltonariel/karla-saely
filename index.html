@@ -3,281 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <title>Karla Saely & Hamilton Arien 💗</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: black;
+        color: #fff;
+        overflow-x: hidden;
+        text-align: center;
+    }
 
-body{
-    font-family:'Cormorant Garamond', serif;
-    background:black;
-    color:white;
-    overflow:hidden;
-}
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+    }
 
-/* Intro */
-#intro{
-    position:absolute;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    letter-spacing:3px;
-    animation:fadeIn 3s ease forwards;
-}
+    h1, p {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+    }
 
-/* Contenido */
-#contenido{
-    display:none;
-    position:absolute;
-    width:100%;
-    height:100%;
-    padding:60px;
-    text-align:center;
-    animation:fadeIn 3s ease forwards;
-}
+    h1 { animation-delay: 0.5s; }
+    p { animation-delay: 1.5s; }
 
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
 
-#texto{
-    max-width:900px;
-    margin:auto;
-    font-size:30px;
-    line-height:1.8;
-    min-height:200px;
-}
+    .photos {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+    }
 
-/* Galería */
-.galeria{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    gap:30px;
-}
+    .photos img {
+        border-radius: 15px;
+        width: 200px;
+        height: auto;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        transition: transform 0.5s;
+    }
 
-.galeria img{
-    width:220px;
-    height:320px;
-    object-fit:cover;
-    border-radius:20px;
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 2s ease;
-}
+    .photos img:hover { transform: scale(1.05); }
 
-/* Pregunta */
-#pregunta{
-    margin-top:50px;
-    opacity:0;
-    transition:opacity 2s ease;
-}
+    /* Ramo en espacio vacío */
+    #ramo {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, 30%) scale(0.5);
+        width: 300px;
+        opacity: 0;
+        transition: all 2s ease;
+        z-index: 2;
+    }
 
-input{
-    padding:10px 20px;
-    border-radius:30px;
-    border:none;
-    text-align:center;
-    width:250px;
-}
+    /* Pétalos cayendo */
+    .petal {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: pink;
+        border-radius: 50%;
+        animation: fall linear infinite;
+        opacity: 0.8;
+    }
 
-button{
-    padding:10px 30px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(45deg,#bfa046,#f5e7a1);
-    cursor:pointer;
-    margin-left:10px;
-}
+    @keyframes fall {
+        0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
 
-/* Ramo */
-#ramo{
-    position:absolute;
-    top:25%;
-    width:320px;
-    opacity:0;
-    transform:scale(0.3);
-    transition:all 2.5s ease;
-    z-index:5;
-}
+    footer {
+        margin-top: 60px;
+        font-size: 16px;
+        opacity: 0.8;
+    }
 
-/* Brillo dorado */
-#brillo{
-    position:absolute;
-    top:20%;
-    width:450px;
-    height:450px;
-    background:radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%);
-    border-radius:50%;
-    opacity:0;
-    transition:opacity 2s ease;
-}
-
-/* Final */
-#final{
-    position:absolute;
-    bottom:10%;
-    width:100%;
-    font-size:34px;
-    opacity:0;
-    text-shadow:0 0 30px rgba(255,215,0,0.8);
-    transition:opacity 3s ease;
-}
-
-/* Créditos */
-#creditos{
-    position:absolute;
-    bottom:3%;
-    width:100%;
-    font-size:20px;
-    letter-spacing:3px;
-    opacity:0;
-    transition:opacity 4s ease;
-}
-
-/* Partículas */
-.particula{
-    position:absolute;
-    width:3px;
-    height:3px;
-    background:gold;
-    border-radius:50%;
-    animation:subir 10s linear infinite;
-    opacity:0.4;
-}
-
-@keyframes subir{
-    from{transform:translateY(100vh);}
-    to{transform:translateY(-10vh);}
-}
-
-@keyframes caerPetalo{
-    0%{transform:translateY(0) rotate(0deg);}
-    100%{transform:translateY(100vh) rotate(360deg);}
-}
 </style>
 </head>
-
 <body>
 
-<div id="intro">Una historia que comenzó el 01 • 10 • 2024</div>
+<div class="container">
+    <h1>Karla Saely 💗</h1>
+    <p>16 meses contigo y aún siento que el destino fue demasiado generoso conmigo.  
+    Llegaste para quedarte y enseñarme que el amor verdadero no se promete… se demuestra.</p>
 
-<div id="contenido">
+    <div class="photos">
+        <img src="imagen1.jpg" alt="Foto 1">
+        <img src="imagen2.jpg" alt="Foto 2">
+        <img src="imagen3.jpg" alt="Foto 3">
+    </div>
 
-<div id="texto"></div>
+    <!-- Ramo -->
+    <img id="ramo" src="ramo.png" alt="Ramo de flores">
 
-<div class="galeria">
-    <img src="imagen1.jpg" id="img1">
-    <img src="imagen2.jpg" id="img2">
-    <img src="imagen3.jpg" id="img3">
+    <p>¿Seguimos escribiendo nuestra historia?</p>
+    <input type="text" id="respuesta" placeholder="Sí">
+    <button id="responder">Responder</button>
+
+    <footer>Karla Saely & Hamilton Arien ∞</footer>
 </div>
 
-<div id="pregunta">
-    <h2>¿Seguimos escribiendo nuestra historia?</h2>
-    <input type="text" id="respuesta" placeholder="Escribe tu respuesta...">
-    <button onclick="verRespuesta()">Responder</button>
-</div>
-
-<div id="brillo"></div>
-<img src="ramo.png" id="ramo">
-
-<div id="final"></div>
-<div id="creditos">Karla Saely & Hamilton Arien • ∞</div>
-
-</div>
-
-<audio id="musica" loop>
-<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
-</audio>
+<!-- Música automática usando tu MP3 -->
+<audio id="musica" src="musica.mp3" autoplay loop></audio>
 
 <script>
+    // Animación ramo y pétalos
+    window.onload = function() {
+        const ramo = document.getElementById('ramo');
+        setTimeout(() => {
+            ramo.style.opacity = 1;
+            ramo.style.transform = "translate(-50%, 0) scale(1)";
+        }, 2000);
 
-/* Partículas doradas */
-for(let i=0;i<40;i++){
-    let p=document.createElement("div");
-    p.className="particula";
-    p.style.left=Math.random()*100+"%";
-    p.style.animationDuration=(5+Math.random()*10)+"s";
-    document.body.appendChild(p);
-}
-
-/* Transición intro */
-setTimeout(()=>{
-    document.getElementById("intro").style.display="none";
-    document.getElementById("contenido").style.display="block";
-    document.getElementById("musica").play();
-    escribir();
-},4000);
-
-var mensaje="Karla Saely… 16 meses contigo y aún siento que el destino fue demasiado generoso conmigo. No llegaste a mi vida por casualidad… llegaste para quedarte. Para enseñarme que el amor verdadero no se promete… se demuestra. Y cada día que camino a tu lado confirmo que quiero seguir construyendo mi vida contigo.";
-
-var i=0;
-
-function escribir(){
-    if(i < mensaje.length){
-        document.getElementById("texto").innerHTML+=mensaje.charAt(i);
-        i++;
-        setTimeout(escribir,35);
-    }else{
-        mostrarGaleria();
-    }
-}
-
-function mostrarGaleria(){
-    document.getElementById("img1").style.opacity="1";
-    document.getElementById("img1").style.transform="translateY(0)";
-    setTimeout(()=>{
-        document.getElementById("img2").style.opacity="1";
-        document.getElementById("img2").style.transform="translateY(0)";
-    },800);
-    setTimeout(()=>{
-        document.getElementById("img3").style.opacity="1";
-        document.getElementById("img3").style.transform="translateY(0)";
-        document.getElementById("pregunta").style.opacity="1";
-    },1600);
-}
-
-function verRespuesta(){
-    let resp=document.getElementById("respuesta").value.toLowerCase();
-
-    if(resp.includes("si")||resp.includes("sí")||resp.includes("claro")||resp.includes("siempre")){
-
-        document.getElementById("brillo").style.opacity="1";
-
-        let ramo=document.getElementById("ramo");
-        ramo.style.opacity="1";
-        ramo.style.transform="scale(1)";
-
-        for(let i=0;i<30;i++){
-            let petalo=document.createElement("div");
-            petalo.innerHTML="🌹";
-            petalo.style.position="absolute";
-            petalo.style.left=Math.random()*100+"%";
-            petalo.style.top="-50px";
-            petalo.style.fontSize="20px";
-            petalo.style.opacity="0.7";
-            petalo.style.animation="caerPetalo 6s linear forwards";
-            document.body.appendChild(petalo);
+        // Crear pétalos
+        for(let i=0; i<30; i++){
+            let petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random()*100 + 'vw';
+            petal.style.animationDuration = 5 + Math.random()*5 + 's';
+            petal.style.animationDelay = Math.random()*5 + 's';
+            document.body.appendChild(petal);
         }
+    };
 
-        document.getElementById("final").style.opacity="1";
-        document.getElementById("final").innerHTML=
-        "Entonces caminemos juntos todo lo que la vida nos permita… y que el tiempo jamás nos encuentre separados, sino más fuertes, más unidos… y más enamorados que ayer.";
-
-        setTimeout(()=>{
-            document.getElementById("creditos").style.opacity="1";
-        },4000);
-
-    }else{
-        alert("Piénsalo bien… yo ya elegí caminar contigo.");
+    // Respuesta interactiva
+    document.getElementById('responder').onclick = function() {
+        const resp = document.getElementById('respuesta').value;
+        if(resp.toLowerCase() === 'sí' || resp.toLowerCase() === 'si') {
+            alert("Entonces caminemos juntos todo lo que la vida nos permita... 💗");
+        } else {
+            alert("No importa, cada día es una nueva oportunidad de amor 💗");
+        }
     }
-}
-
 </script>
 
 </body>
